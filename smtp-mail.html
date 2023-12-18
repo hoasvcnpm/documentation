@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-J9KSS1W2KE"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'G-J9KSS1W2KE');
+	</script>
+	<title>SMTP Mail - Documentation</title>
+	<!-- Meta -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Documentation For Everyone">
+	<meta name="author" content="photoboxone">
+	<link rel="icon" href="assets/images/logo-32x32.png" />
+	<!-- Google Font -->
+	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap" rel="stylesheet">
+	<!-- FontAwesome JS-->
+	<script defer src="assets/fontawesome/js/all.min.js"></script>
+	<!-- Plugins CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.2/styles/atom-one-dark.min.css">
+	<link rel="stylesheet" href="assets/plugins/simplelightbox/simple-lightbox.min.css">
+	<!-- Theme CSS -->
+	<link id="theme-style" rel="stylesheet" href="assets/css/theme.css">
+	<!-- Docs CSS -->
+	<link id="theme-style" rel="stylesheet" href="assets/css/docs.css">
+</head>
+<body class="docs-page">
+	<header class="header fixed-top">
+		<div class="branding docs-branding">
+			<div class="container-fluid position-relative py-2">
+				<div class="docs-logo-wrapper">
+					<button id="docs-sidebar-toggler" class="docs-sidebar-toggler docs-sidebar-visible me-2 d-xl-none"
+						type="button">
+						<span></span>
+						<span></span>
+						<span></span>
+					</button>
+					<div class="site-logo">
+						<a class="navbar-brand" href="index.html">
+							<img class="logo-icon me-2" src="assets/images/logo-32x32.png" alt="smtp-mail">
+							<span class="logo-text" title="PhotoBoxOne">PB One</span>
+						</a>
+					</div>
+				</div><!--//docs-logo-wrapper-->
+				<div class="docs-top-utilities d-flex justify-content-end align-items-center">
+					<div class="top-search-box d-none d-lg-flex">
+						<form class="search-form">
+							<input type="text" placeholder="Search the docs..." name="search" class="form-control search-input">
+							<button type="submit" class="btn search-btn" value="Search"><i class="fas fa-search"></i></button>
+						</form>
+					</div>
+					<ul class="social-list list-inline mx-md-3 mx-lg-5 mb-0 d-none d-lg-flex"> </ul><!--//social-list-->
+					<a href="#" class="btn btn-primary d-none d-lg-flex">Download</a>
+				</div><!--//docs-top-utilities-->
+			</div><!--//container-->
+		</div><!--//branding-->
+	</header><!--//header-->
+
+	<div class="docs-wrapper">
+		<div id="docs-sidebar" class="docs-sidebar">
+			<div class="top-search-box d-lg-none p-3">
+				<form class="search-form">
+					<input type="text" placeholder="Search the docs..." name="search" class="form-control search-input">
+					<button type="submit" class="btn search-btn" value="Search"><i class="fas fa-search"></i></button>
+				</form>
+			</div>
+			<nav id="docs-nav" class="docs-nav navbar">
+				<ul class="section-items list-unstyled nav flex-column pb-3">
+					<li class="nav-item section-title">
+						<a class="nav-link scrollto active" href="#section-1"><span class="theme-icon-holder me-2"><i class="fas fa-map-signs"></i></span>Introduction</a>
+					</li>
+					<li class="nav-item"><a class="nav-link scrollto" href="#item-1-1">Login</a></li>
+					<li class="nav-item section-title mt-3">
+						<a class="nav-link scrollto" href="#section-2"><span class="theme-icon-holder me-2"><i class="fas fa-arrow-down"></i></span>Installation</a>
+					</li>
+					<li class="nav-item"><a class="nav-link scrollto" href="#item-2-1">Add Plugins</a></li>
+					<li class="nav-item"><a class="nav-link scrollto" href="#item-2-2">Download Plugin</a></li>
+					<li class="nav-item section-title mt-3">
+						<a class="nav-link scrollto" href="#section-3"><span class="theme-icon-holder me-2"><i class="fas fa-gears"></i></span>Settings</a>
+					</li>
+					<li class="nav-item"><a class="nav-link scrollto" href="#item-3-1">General</a></li>
+					<li class="nav-item"><a class="nav-link scrollto" href="#item-3-2">Send test</a></li>
+					<li class="nav-item"><a class="nav-link scrollto" href="#item-3-3">Data</a></li>
+				</ul>
+			</nav><!--//docs-nav-->
+		</div><!--//docs-sidebar-->
+		<div class="docs-content">
+			<div class="container">
+				<article class="docs-article">
+					<section class="docs-section d-none ads-section"></section>
+				</article>
+				<article class="docs-article" id="section-1">
+					<header class="docs-header">
+						<h2 class="docs-heading">Introduction <span class="docs-time">Last updated: 2023-12-16</span>
+						</h2>
+						<section class="docs-intro">
+							<p>SMTP settings, mail function, send test, save submited data ( phpmailer ). It is very easy to configure and fast.</p>
+							<div class="mb-3">
+								<label for="website-url" class="form-label fw-bold">Website URL to apply all URL in document.</label>
+								<input type="url" class="form-control" id="website-url" placeholder="https://example.com" value="https://example.com" />
+							</div>
+						</section><!--//docs-intro-->
+					</header>
+					<section class="docs-section" id="item-1-1">
+						<h3 class="section-heading">Login</h3>
+						<p>Go to <a class="website-url" href="/wp-login.php" target="_blank">wp-login.php</a>.</p>
+						<figure class="figure docs-figure py-3 text-center">
+							<img src="assets/images/login.png" alt="login" class="img-fluid">
+						</figure>
+					</section><!--//section-->
+				</article><!--//docs-article-->
+				<article class="docs-article" id="section-2">
+					<header class="docs-header">
+						<h2 class="section-heading">Installation</h2>
+						<section class="docs-intro">
+							<p>
+								<a class="scrollto" href="#item-2-1">Add Plugins</a>
+								or
+								<a class="scrollto" href="#item-2-2">Download Plugin</a>
+							</p>
+						</section><!--//docs-intro-->
+					</header>
+					<section class="docs-section" id="item-2-1">
+						<h3 class="section-heading">Add Plugins</h3>
+						<p>1. Go to <a class="website-url" href="/wp-admin/plugin-install.php?s=photoboxone&tab=search&type=term" target="_blank">wp-admin/plugin-install.php</a> &rarr; search <strong>photoboxone</strong> &rarr; click <strong>Install Now</strong>.</p>
+						<figure class="figure docs-figure py-3 text-center">
+							<img src="assets/smtp-mail/img-smtp-mail-01.png" alt="" class="img-fluid">
+						</figure>
+						<p>2. Click <strong>Active</strong>.</p>
+						<figure class="figure docs-figure py-3 text-center">
+							<img src="assets/smtp-mail/img-smtp-mail-02.png" alt="" class="img-fluid">
+						</figure>
+					</section><!--//section-->
+					<section class="docs-section" id="item-2-2">
+						<h3 class="section-heading">Download Plugin</h3>
+						<p>1. Go to <a href="https://wordpress.org/plugins/search/photoboxone" target="_blank">https://wordpress.org/plugins/</a> and search <strong>photoboxone</strong>.</p>
+						<figure class="figure docs-figure py-3 text-center">
+							<img src="assets/smtp-mail/img-smtp-mail-03.png" alt="" class="figure-img img-fluid shadow rounded">
+						</figure>
+						<p>2. Click <a href="https://wordpress.org/plugins/smtp-mail/" target="_blank"><strong>SMTP Mail</strong></a> plugin and click <strong>Download</strong> button.</p>
+						<figure class="figure docs-figure py-3 text-center">
+							<img src="assets/smtp-mail/img-smtp-mail-04.png" alt="" class="figure-img img-fluid shadow rounded">
+						</figure>
+						<p>3. Go to <a class="website-url" href="/wp-admin/plugin-install.php?s=photoboxone&tab=search&type=term" target="_blank">wp-admin/plugin-install.php</a> &rarr; click <strong>Upload Plugin</strong> &rarr; click <strong>Choose File</strong> &rarr; click <strong>Install Now</strong>.</p>
+						<figure class="figure docs-figure py-3 text-center">
+							<img src="assets/images/upload-plugin.png" alt="" class="figure-img img-fluid shadow rounded">
+						</figure>
+
+					</section><!--//section-->
+				</article><!--//docs-article-->
+				<article class="docs-article" id="section-3">
+					<header class="docs-header">
+						<h2 class="section-heading">Settings</h2>
+						<section class="docs-intro">
+							<p>Go to <a class="website-url" href="/wp-admin/options-general.php?page=smtpmail-setting" target="_blank">wp-admin/options-general.php?page=smtpmail-setting</a>.</p>
+							<h5>Menu Tabs</h5>
+							<ol>
+								<li><a class="scrollto" href="#item-3-1">General</a></li>
+								<li><a class="scrollto" href="#item-3-2">Send test</a></li>
+								<li><a class="scrollto" href="#item-3-3">Data</a></li>
+							</ol>
+						</section><!--//docs-intro-->
+					</header>
+					<section class="docs-section" id="item-3-1">
+						<h3 class="section-heading">General</h3>
+						<p>Go to the <a class="website-url" href="/wp-admin/options-general.php?page=smtpmail-setting" target="_blank">General</a> tab.</p>
+						<h4>Mail type: <strong>Mail</strong></h4>
+						<p>Send mail by function <code>mail()</code> of <a href="https://www.php.net/manual/en/function.mail.php" target="_blank">php</a>.</p>
+						<figure class="figure docs-figure py-3 text-center">
+							<img src="assets/smtp-mail/img-smtp-mail-05.png" alt="" class="img-fluid">
+						</figure>
+						<h4>Mail type: <strong>SMTP</strong></h4>
+						<figure class="figure docs-figure py-3 text-center">
+							<img src="assets/smtp-mail/img-smtp-mail-07.png" alt="" class="img-fluid">
+						</figure>
+						<h5>Custom value for SSL</h5>
+						<div class="table-responsive my-4">
+							<table class="table table-bordered">
+								<tr>
+									<th class="theme-bg-light">SMTP Secure</th>
+									<td>SSL</td>
+								</tr>
+								<tr>
+									<th class="theme-bg-light">Port</th>
+									<td>465 (gmail)</td>
+								</tr>
+								<tr>
+									<th class="theme-bg-light">Username</th>
+									<td>username@gmail.com</td>
+								</tr>
+								<tr>
+									<th class="theme-bg-light">Password</th>
+									<td>password</td>
+								</tr>
+								<tr>
+									<th class="theme-bg-light">From Email</th>
+									<td>username@gmail.com</td>
+								</tr>
+								<tr>
+									<th class="theme-bg-light">From Name</th>
+									<td>Your sitename</td>
+								</tr>
+							</table>
+						</div>
+						<h5>Custom value for TLS</h5>
+						<div class="table-responsive my-4">
+							<table class="table table-bordered">
+								<tr>
+									<th class="theme-bg-light">SMTP Secure</th>
+									<td>TLS</td>
+								</tr>
+								<tr>
+									<th class="theme-bg-light">Port</th>
+									<td>587 (gmail)</td>
+								</tr>
+								<tr>
+									<th class="theme-bg-light">Username</th>
+									<td>username@gmail.com</td>
+								</tr>
+								<tr>
+									<th class="theme-bg-light">Password</th>
+									<td>password</td>
+								</tr>
+								<tr>
+									<th class="theme-bg-light">From Email</th>
+									<td>username@gmail.com</td>
+								</tr>
+								<tr>
+									<th class="theme-bg-light">From Name</th>
+									<td>Your sitename</td>
+								</tr>
+							</table>
+						</div>
+						<p><a href="https://docs.cpanel.net/cpanel/email/set-up-mail-client/#mail-client-manual-settings" target="_blank">cPanel documentation</a></p>
+						<h4>Mail type: <strong>SendGrid</strong></h4>
+						<figure class="figure docs-figure py-3 text-center">
+							<img src="assets/smtp-mail/img-smtp-mail-08.png" alt="" class="img-fluid">
+						</figure>
+						<h5>Custom value</h5>
+						<div class="table-responsive my-4">
+							<table class="table table-bordered">
+								<tr>
+									<th class="theme-bg-light">SendGrid API Key</th>
+									<td>q6yhiDxyvmNRlsH3aMXQpElFssXVUbQE3NVPV</td>
+								</tr>
+								<tr>
+									<th class="theme-bg-light">From Email</th>
+									<td>noreply@example.com</td>
+								</tr>
+								<tr>
+									<th class="theme-bg-light">From Name</th>
+									<td>Your sitename</td>
+								</tr>
+							</table>
+						</div>
+						<p><a href="https://docs.sendgrid.com/api-reference/api-keys/create-api-keys" target="_blank">SendGrid documentation</a></p>
+					</section><!--//section-->
+					<section class="docs-section" id="item-3-2">
+						<h3 class="section-heading">Send test</h3>
+						<p>Go to the <a class="website-url" href="/wp-admin/options-general.php?page=smtpmail-setting&tab=test" target="_blank">Send test</a> tab.</p>
+						<figure class="figure docs-figure py-3 text-center">
+							<img src="assets/smtp-mail/img-smtp-mail-06.png" alt="" class="figure-img img-fluid shadow rounded">
+						</figure>
+					</section><!--//section-->
+					<section class="docs-section" id="item-3-3">
+						<h3 class="section-heading">Data</h3>
+						<p>Go to the <a class="website-url" href="/wp-admin/options-general.php?page=smtpmail-setting&tab=data" target="_blank">Data</a> tab.</p>
+						<p> You need enable option `Save data SendMail` in the <a class="scrollto" href="#item-3-1">General</a> tab.</p>
+						<figure class="figure docs-figure py-3 text-center">
+							<img src="assets/smtp-mail/img-smtp-mail-09.png" alt="" class="figure-img img-fluid shadow rounded">
+						</figure>
+					</section><!--//section-->
+					<section class="docs-section d-none ads-section"></section>
+				</article><!--//docs-article-->
+				<footer class="footer">
+					<div class="container text-center py-5">
+						&copy; 2023 <a href="https://photoboxone.com" target="_blank">PB One</a>. All rights reserved.
+					</div>
+				</footer>
+			</div>
+		</div>
+	</div><!--//docs-wrapper-->
+	<!-- Javascript -->
+	<script src="assets/plugins/popper.min.js"></script>
+	<script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+	<!-- Page Specific JS -->
+	<script src="assets/plugins/smoothscroll.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+	<script src="assets/js/highlight-custom.js"></script>
+	<script src="assets/plugins/simplelightbox/simple-lightbox.min.js"></script>
+	<script src="assets/plugins/gumshoe/gumshoe.polyfills.min.js"></script>
+	<script src="assets/js/docs.js"></script>
+	<script src="assets/js/ads.js"></script>
+</body>
+</html>
