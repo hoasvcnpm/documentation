@@ -14,14 +14,14 @@
 
 	function scroll(){
 		section.forEach(e => {
-			if(e.getAttribute('data-added') != 1 && window.scrollY + window.innerHeight >= e.offsetTop ) {
+			if(e.getAttribute('data-added') != 1) {
 				e.setAttribute('data-added', 1);
 
 				// e.appendChild(script);
 
 				e.innerHTML = html;
 
-				count++;
+				// count++;
 
 				e.classList.remove('d-none');
 
@@ -46,7 +46,7 @@
 
 		html = '<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5261703613038425" data-ad-slot="8088219191" data-ad-format="auto"></ins>';
 
-		window.addEventListener('scroll', scroll, false);
+		// window.addEventListener('scroll', scroll, false);
 		scroll();
 	}
     
