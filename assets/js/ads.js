@@ -3,7 +3,7 @@
  */
 (function(){
 
-	// if(location.hostname.indexOf('photoboxcom.com') == -1) return;
+	if(location.hostname.indexOf('photoboxone') == -1) return;
 
 	let script = document.createElement('script');
 	script.async = 1;

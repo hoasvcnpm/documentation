@@ -109,6 +109,8 @@ function documentation(){
 	if(website.value != '') {
 		setUrl( website.value );
 	}
+
+	loadYoutubeScript()
 }
 
 function setUrl( url )
@@ -126,4 +128,44 @@ function setUrl( url )
 	document.querySelectorAll('.website-url').forEach( e => {
 		e.setAttribute('href', url + e.getAttribute('data-href'));
 	});
+}
+
+function loadYoutubeScript()
+{
+	window.yt_players = document.querySelectorAll('.yt-player');
+
+	if(yt_players.length == 0) return ;
+	
+	// 2. This code loads the IFrame Player API code asynchronously.
+	var tag = document.createElement('script');
+
+	tag.src = "https://www.youtube.com/iframe_api";
+	var firstScriptTag = document.getElementsByTagName('script')[0];
+	firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+	window.addEventListener('message', e => {
+		console.log('message', e.origin);
+	}, false);
+}
+
+function onYouTubeIframeAPIReady() 
+{
+	yt_players.forEach(item => {
+		item.player = new YT.Player(item, {
+			height: '390',
+			width: '640',
+			videoId: item.id,
+			playerVars: {
+				'playsinline': 1
+			},
+			events: {
+				'onReady': function(){
+					// console.log('onReady');
+				},
+				'onStateChange': function(){
+					// console.log('onStateChange');
+				}
+			}
+		});
+	})
 }
