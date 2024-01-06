@@ -87,27 +87,31 @@ var lightbox = new SimpleLightbox('.simplelightbox a', {/* options */});
 function documentation(){
 
 	// The slug plugin in the WordPress
-	let slug = document.querySelector('.logo-icon').getAttribute('alt') || '',
+	let slug = location.href.indexOf('.html'),
 		website = document.querySelector('#website-url');
 
-	if(slug == '') return;
-
-	document.querySelectorAll('.docs-section a[href*="http"]').forEach((e) => {
-		let href = e.getAttribute('href');
-
-		e.setAttribute('href', href + (href.indexOf('?') > -1 ? '&' : '?') + 'utm_term=' + slug + '&utm_medium=' + slug + '&utm_source=' + location.hostname);
-	});
+	if(slug > -1) {
+		slug = location.href.split('/').pop().split('.html').shift();
+		
+		document.querySelectorAll('.docs-section a[href*="http"]').forEach((e) => {
+			let href = e.getAttribute('href');
+	
+			e.setAttribute('href', href + (href.indexOf('?') > -1 ? '&' : '?') + 'utm_term=' + slug + '&utm_medium=' + slug + '&utm_source=' + location.hostname);
+		});
+	}
 	
 	document.querySelectorAll('.website-url').forEach( e => {
 		e.setAttribute('data-href', e.getAttribute('href'));
 	});
 	
-	website.addEventListener('change', function(){
-		setUrl( this.value );
-	}, false);
-
-	if(website.value != '') {
-		setUrl( website.value );
+	if(website != null) {
+		website.addEventListener('change', function(){
+			setUrl( this.value );
+		}, false);
+		
+		if(website.value != '') {
+			setUrl( website.value );
+		}
 	}
 
 	loadYoutubeScript()
