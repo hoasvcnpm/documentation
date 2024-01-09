@@ -5,12 +5,25 @@
 
 	if(location.hostname.indexOf('photoboxone') == -1) return;
 
-	let script = document.createElement('script');
-	script.async = 1;
-	script.src = "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5261703613038425";
-	script.setAttribute("crossorigin", "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5261703613038425");
+	function add_adsbygoogle(){
+		let script = document.createElement('script');
+		
+		script.async = 1;
+		script.src = "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5261703613038425";
+		script.setAttribute('crossorigin', 'anonymous');
 
-	document.querySelector('head').appendChild(script);
+		document.querySelector('head').appendChild(script);
+	}
+
+	function add_ampjs(){
+		let script = document.createElement('script');
+		
+		script.async = 1;
+		script.src = "https://cdn.ampproject.org/v0/amp-ad-0.1.js";
+		script.setAttribute('custom-element', 'amp-ad');
+
+		document.querySelector('head').appendChild(script);
+	}
 
 	function scroll(){
 		section.forEach(e => {
@@ -36,6 +49,21 @@
 		}
 	}
 
+	function is_mobile(){
+		var win = window,
+			doc = document,
+			docElem = doc.documentElement,
+			body = doc.getElementsByTagName('body')[0];
+
+		return parseInt(win.innerWidth || docElem.clientWidth || body.clientWidth)<=768;
+	}
+
+	add_adsbygoogle();
+
+	if(is_mobile()){
+		add_ampjs();
+	}
+
 	var section = document.querySelectorAll('.ads-section'),
 		count = 0,
 		html = '';
@@ -44,8 +72,12 @@
 
 		// html = '<img src="https://ps.w.org/cf7-preview/assets/icon-128x128.png?rev=3007867" alt="" />';
 
-		html = '<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5261703613038425" data-ad-slot="8088219191" data-ad-format="auto"></ins>';
-
+		if(is_mobile()){
+			html = '<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5261703613038425" data-ad-slot="8088219191" data-ad-format="auto"></ins>';
+		} else {
+			html = '<amp-ad width="100vw" height="320" type="adsense" data-ad-client="ca-pub-5261703613038425" data-ad-slot="8088219191" data-auto-format="rspv" data-full-width=""><div overflow=""></div></amp-ad>';
+		}
+		
 		// window.addEventListener('scroll', scroll, false);
 		scroll();
 	}
