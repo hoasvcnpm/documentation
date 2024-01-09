@@ -24,8 +24,10 @@
 
 		document.querySelector('head').appendChild(script);
 	}
-
+	
 	function scroll(){
+		let count = 0;
+		
 		section.forEach(e => {
 			if(e.getAttribute('data-added') != 1) {
 				e.setAttribute('data-added', 1);
@@ -58,14 +60,13 @@
 		return parseInt(win.innerWidth || docElem.clientWidth || body.clientWidth)<=768;
 	}
 
-	add_adsbygoogle();
-
+	// add_adsbygoogle();
+	
 	if(is_mobile()){
 		add_ampjs();
 	}
 
-	var section = document.querySelectorAll('.ads-section'),
-		count = 0,
+	var section = document.querySelectorAll('.ads-section'),		
 		html = '';
 	
 	if(section.length>0) {
@@ -73,9 +74,9 @@
 		// html = '<img src="https://ps.w.org/cf7-preview/assets/icon-128x128.png?rev=3007867" alt="" />';
 
 		if(is_mobile()){
-			html = '<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5261703613038425" data-ad-slot="8088219191" data-ad-format="auto"></ins>';
-		} else {
 			html = '<amp-ad width="100vw" height="320" type="adsense" data-ad-client="ca-pub-5261703613038425" data-ad-slot="8088219191" data-auto-format="rspv" data-full-width=""><div overflow=""></div></amp-ad>';
+		} else {
+			html = '<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5261703613038425" data-ad-slot="8088219191" data-ad-format="auto"></ins>';
 		}
 		
 		// window.addEventListener('scroll', scroll, false);
